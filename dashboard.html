@@ -1,62 +1,106 @@
-<!DOCTYPE html>
-<html>
+
 <head>
-
-<title>Dashboard</title>
-<link rel="stylesheet" href="style.css">
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background-color: #f9f9f9;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .container {
+      max-width: 800px;
+      margin: auto;
+    }
+    .stats {
+      display: flex;
+      justify-content: space-around;
+      margin-bottom: 40px;
+    }
+    .stat {
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      flex: 1;
+      margin: 0 10px;
+    }
+    canvas {
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+  </style>
 </head>
 
 <body>
 
 <header>
-<h2>Dashboard</h2>
+  <h2>Dashboard</h2>
 </header>
 
 <div class="container">
 
-<div class="stats">
+  <div class="stats">
+    <div class="stat">
+      <h3>Reports</h3>
+      <p>45</p>
+    </div>
 
-<div class="stat">
-<h3>Reports</h3>
-<p>45</p>
-</div>
+    <div class="stat">
+      <h3>Found</h3>
+      <p>30</p>
+    </div>
 
-<div class="stat">
-<h3>Found</h3>
-<p>30</p>
-</div>
+    <div class="stat">
+      <h3>Returned</h3>
+      <p>20</p>
+    </div>
+  </div>
 
-<div class="stat">
-<h3>Returned</h3>
-<p>20</p>
-</div>
-
-</div>
-
-<canvas id="chart"></canvas>
+  <canvas id="chart" width="800" height="400"></canvas>
 
 </div>
 
 <script>
+  const ctx = document.getElementById('chart').getContext('2d');
 
-const ctx = document.getElementById('chart');
-
-new Chart(ctx,{
-type:'bar',
-
-data:{
-labels:['Electronics','Books','ID Cards','Accessories'],
-
-datasets:[{
-label:'Items',
-data:[12,8,15,10]
-}]
-}
-
-});
-
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['Electronics', 'Books', 'ID Cards', 'Accessories'],
+      datasets: [{
+        label: 'Items',
+        data: [12, 8, 15, 10],
+        backgroundColor: ['#4e73df', '#1cc88a', '#36b9cc', '#f6c23e']
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: {
+          display: true,
+          position: 'top'
+        },
+        title: {
+          display: true,
+          text: 'Items Found by Category'
+        }
+      },
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
 </script>
 
 </body>

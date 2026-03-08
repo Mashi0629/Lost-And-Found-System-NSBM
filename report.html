@@ -1,6 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Report Item</title>
 <link rel="stylesheet" href="style.css">
 </head>
@@ -13,37 +16,38 @@
 
 <div class="container">
 
-<select>
-<option>Lost Item</option>
-<option>Found Item</option>
-</select>
-
 <form id="reportForm">
 
-<label>Item Name</label>
-<input type="text" required>
-
-<label>Category</label>
-<select>
-<option>Electronics</option>
-<option>Books</option>
-<option>ID Card</option>
-<option>Accessories</option>
+<label for="type">Item Type</label>
+<select id="type" name="type">
+<option value="lost">Lost Item</option>
+<option value="found">Found Item</option>
 </select>
 
-<label>Location</label>
-<select>
-<option>Library</option>
-<option>Cafeteria</option>
-<option>Lecture Hall</option>
-<option>Bus Stop</option>
+<label for="itemName">Item Name</label>
+<input type="text" id="itemName" name="itemName" placeholder="Enter item name" required>
+
+<label for="category">Category</label>
+<select id="category" name="category">
+<option value="electronics">Electronics</option>
+<option value="books">Books</option>
+<option value="idcard">ID Card</option>
+<option value="accessories">Accessories</option>
 </select>
 
-<label>Description</label>
-<textarea></textarea>
+<label for="location">Location</label>
+<select id="location" name="location">
+<option value="library">Library</option>
+<option value="cafeteria">Cafeteria</option>
+<option value="lecturehall">Lecture Hall</option>
+<option value="busstop">Bus Stop</option>
+</select>
 
-<label>Upload Photo</label>
-<input type="file">
+<label for="description">Description</label>
+<textarea id="description" name="description" placeholder="Describe the item"></textarea>
+
+<label for="photo">Upload Photo</label>
+<input type="file" id="photo" name="photo" accept="image/*">
 
 <button type="submit">Submit</button>
 
