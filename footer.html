@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NSBM L&F Footer</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    :root {
+      --green: #28a745;
+      --green-dark: #218838;
+      --dark: #343a40;
+      --gray: #6c757d;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      background: #f8f9fa; /* just for preview */
+    }
+
+    .footer {
+      background: var(--dark);
+      color: white;
+      padding: 60px 5% 30px;
+      width: 100%;
+    }
+
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 40px;
+      max-width: 1200px;
+      margin: 0 auto 40px;
+    }
+
+    .footer h3 {
+      color: var(--green);
+      margin-bottom: 16px;
+      font-size: 1.4rem;
+    }
+
+    .footer h4 {
+      font-size: 1.15rem;
+      margin-bottom: 16px;
+      color: white;
+    }
+
+    .footer p, .footer li {
+      color: #ddd;
+      line-height: 1.7;
+    }
+
+    .footer ul {
+      list-style: none;
+    }
+
+    .footer a {
+      color: #ccc;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer a:hover {
+      color: var(--green);
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 30px;
+      border-top: 1px solid #555;
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+
+    .contact-item {
+      margin: 12px 0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    @media (max-width: 768px) {
+      .footer {
+        padding: 50px 6% 25px;
+      }
+      .footer-content {
+        gap: 50px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div>
+        <h3>NSBM L&F</h3>
+        <p>NSBM Green University is a premier higher education institution in Sri Lanka.<br>Our Lost & Found portal serves to build a responsible and caring student community.</p>
+      </div>
+
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#">How to Report</a></li>
+          <li><a href="#">Verification Process</a></li>
+          <li><a href="#">Campus Map</a></li>
+          <li><a href="#">FAQ</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Contact Us</h4>
+        <ul>
+          <li class="contact-item">📧 <a href="mailto:support@nsbm.lk">support@nsbm.lk</a></li>
+          <li class="contact-item">📞 <a href="tel:+94115445000">+94 11 544 5000</a></li>
+          <li class="contact-item">
+            <span>📍</span>
+            <span>NSBM Green University,<br>Mahenwaththa, Homagama,<br>Sri Lanka</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      © 2026 NSBM Green University. All rights reserved. Designed for the Green Community.
+    </div>
+  </footer>
+
+</body>
+</html>
